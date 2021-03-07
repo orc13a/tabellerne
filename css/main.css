@@ -1,0 +1,67 @@
+body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+#equationDisplay {
+    font-size: 30px;
+    line-height: 87px;
+    min-height: 87px;
+}
+
+input, #submitUserInputBtn, #nextEquBtn {
+    border: none;
+    outline: none;
+    background-color: none;
+}
+
+.userInput {
+    display: inline-block;
+    border-radius: 10px;
+    border: 2px solid #b088f9;
+    padding: 5px;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.10);
+}
+
+#userAnwserInput {
+    font-size: 16px;
+    text-align: center;
+}
+
+#submitUserInputBtn {
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 38px;
+    width: 60px;
+    background-color: #da9ff9;
+}
+
+.correct {
+    color: #83e4b5;
+}
+
+.incorrect {
+    color: #e40017;
+}
+
+.correctAnwser {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+#nextEquBtn {
+    line-height: 38px;
+    font-size: 22px;
+    background-color: #da9ff9;
+    border-radius: 10px;
+    width: 65px;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.10);
+}
