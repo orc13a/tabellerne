@@ -9,11 +9,17 @@ const answerDisplay = document.getElementById('answerDisplay');
 const userInput = document.getElementById('userAnwserInput');
 const submitAnwserBtn = document.getElementById('submitUserInputBtn');
 const newEquBtn = document.getElementById('nextEquBtn');
+const slider = document.getElementById("equRange");
+const sliderOutput = document.getElementById("sliderMax");
 
 // Display new equation on load
-window.onload = function() {
+window.onload = () => {
     // Run function
     newEqu();
+
+    // Set slider default max value
+    slider.value = max;
+    sliderOutput.innerHTML = slider.value;
 }
 
 // To get the random number
@@ -21,12 +27,25 @@ function randomNum(min, max) {
     // return random number and max included
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-
+/*
 function newEqu() {
     // Left side of the equation
     var leftSide = randomNum(min, max);
     // Right side of the equation
     var rightSide = randomNum(min, max);
+
+    // Display equation for user
+    equationDisplay.innerHTML = `${leftSide} ∙ ${rightSide}`;
+    // Save anwser
+    currentEquAnwser = (leftSide * rightSide);
+}
+*/
+
+function newEqu() {
+    // Left side of the equation
+    var leftSide = randomNum(min, max);
+    // Right side of the equation
+    var rightSide = randomNum(min, 10);
 
     // Display equation for user
     equationDisplay.innerHTML = `${leftSide} ∙ ${rightSide}`;
@@ -48,7 +67,7 @@ submitAnwserBtn.addEventListener('click', () => {
         }
 
         // Show container
-        answerContainer.style.display = 'block';
+        answerContainer.style.visibility = 'visible';
 
         // AutoFocus on the "OK" button
         newEquBtn.focus();
@@ -78,8 +97,13 @@ newEquBtn.addEventListener('click', () => {
     userInput.focus();
 
     // Hide container
-    answerContainer.style.display = 'none';
+    answerContainer.style.visibility = 'hidden';
 
     // Run function
     newEqu();
+});
+
+slider.addEventListener('input', () => {
+    sliderOutput.innerHTML = slider.value;
+    max = slider.value;
 });

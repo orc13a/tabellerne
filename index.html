@@ -21,11 +21,29 @@
                     <button id="submitUserInputBtn">Svar</button>
                 </div>
             </div>
-            <div id="answerContainer" style="display: none;">
+            <div id="answerContainer" style="visibility: hidden;">
                 <p id="answerDisplay">
                     <!-- Answer will be displayed here -->
                 </p>
                 <button id="nextEquBtn">OK</button>
+            </div>
+        </div>
+        <div class="sliderContainer">
+            <div class="slidecontainer">
+                <div class="sliderRangeDisplay">
+                    <span id="sliderMin">
+                        2
+                    </span>
+                    <span id="sliderMax">
+                        <!-- User selected max value displayed here -->
+                    </span>
+                </div>
+                <div>
+                    <input type="range" min="2" max="100" value="" class="slider" id="equRange">
+                </div>
+                <div class="sliderInfo">
+                    Vælg de tabeller du vil øve.
+                </div>
             </div>
         </div>
     </main>
