@@ -11,8 +11,9 @@ const answerDisplay = document.getElementById('answerDisplay');
 const userInput = document.getElementById('userAnwserInput');
 const submitAnwserBtn = document.getElementById('submitUserInputBtn');
 const newEquBtn = document.getElementById('nextEquBtn');
-const slider = document.getElementById("equRange");
-const sliderOutput = document.getElementById("sliderValue");
+const slider = document.getElementById('equRange');
+const sliderOutput = document.getElementById('sliderValue');
+const sliderOutputInput = document.getElementById('sliderValueInput');
 
 // Display new equation on load
 window.onload = () => {
@@ -23,7 +24,9 @@ window.onload = () => {
     slider.min = sliderMin;
     slider.max = sliderMax;
     slider.value = max;
-    sliderOutput.innerHTML = slider.value;
+    //sliderOutput.innerHTML = slider.value;
+    sliderOutputInput.value = slider.value;
+    sliderOutputInput.maxLength = sliderMax.toString().length;
 }
 
 // To get the random number
@@ -114,6 +117,23 @@ newEquBtn.addEventListener('click', () => {
 // When the slider gets draged
 slider.addEventListener('input', () => {
     // Change the value to the new value
-    sliderOutput.innerHTML = slider.value;
+    //sliderOutput.innerHTML = slider.value;
+    sliderOutputInput.value = slider.value;
+    max = slider.value;
+});
+
+// If the user changes the max value by typing it into the input
+sliderOutputInput.addEventListener('input', () => {
+    slider.value = sliderOutputInput.value;
+    max = slider.value;
+});
+
+// If the user leaves the inputs value less then 2 and if its empty
+sliderOutputInput.addEventListener('change', () => {
+    if (sliderOutputInput.value < 2 || sliderOutputInput.length < 2) {
+        sliderOutputInput.value = 2;
+        slider.value = 2;
+    }
+
     max = slider.value;
 });
