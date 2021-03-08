@@ -1,3 +1,5 @@
+let sliderMin = 2;
+let sliderMax = 100;
 let min = 2;
 let max = 10;
 let currentEquAnwser = 0;
@@ -10,14 +12,16 @@ const userInput = document.getElementById('userAnwserInput');
 const submitAnwserBtn = document.getElementById('submitUserInputBtn');
 const newEquBtn = document.getElementById('nextEquBtn');
 const slider = document.getElementById("equRange");
-const sliderOutput = document.getElementById("sliderMax");
+const sliderOutput = document.getElementById("sliderValue");
 
 // Display new equation on load
 window.onload = () => {
     // Run function
     newEqu();
 
-    // Set slider default max value
+    // Set slider default values
+    slider.min = sliderMin;
+    slider.max = sliderMax;
     slider.value = max;
     sliderOutput.innerHTML = slider.value;
 }

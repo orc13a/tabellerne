@@ -76,15 +76,25 @@ input, #submitUserInputBtn, #nextEquBtn {
 
 .sliderRangeDisplay {
     display: inline-block;
-    width: 100px;
+    width: 150px;
     font-weight: lighter;
 }
 
 #sliderMin {
+    position: relative;
+    right: 3px;
     float: left;
 }
 
+#sliderValue {
+    position: relative;
+    left: 10px;
+    font-weight: normal;
+}
+
 #sliderMax {
+    position: relative;
+    left: 13px;
     float: right;
 }
 
@@ -95,7 +105,7 @@ input, #submitUserInputBtn, #nextEquBtn {
 .slider {
     border: none;
     -webkit-appearance: none;
-    width: 100px;
+    width: 150px;
     height: 10px;
     border-radius: 5px;
     background: #d3d3d3;
