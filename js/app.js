@@ -16,7 +16,7 @@ const sliderOutput = document.getElementById("sliderValue");
 
 // Display new equation on load
 window.onload = () => {
-    // Run function
+    // Call function
     newEqu();
 
     // Set slider default values
@@ -31,7 +31,9 @@ function randomNum(min, max) {
     // return random number and max included
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-/*
+
+/* // Old "newEqu" function
+// The new one has right side max as 10 at all time
 function newEqu() {
     // Left side of the equation
     var leftSide = randomNum(min, max);
@@ -63,7 +65,9 @@ submitAnwserBtn.addEventListener('click', () => {
     var inputValue = userInput.value;
 
     // Check input
+    // If the input field is not empty and is a number
     if (inputValue.length > 0 && Number(inputValue)) {
+        // If the input as a number is equal and the same type of the correct anwser
         if (Number(inputValue) === currentEquAnwser) {
             answerDisplay.innerHTML = `<span class="correct">Rigtigt</span>`;
         } else {
@@ -103,11 +107,13 @@ newEquBtn.addEventListener('click', () => {
     // Hide container
     answerContainer.style.visibility = 'hidden';
 
-    // Run function
+    // Call function
     newEqu();
 });
 
+// When the slider gets draged
 slider.addEventListener('input', () => {
+    // Change the value to the new value
     sliderOutput.innerHTML = slider.value;
     max = slider.value;
 });
